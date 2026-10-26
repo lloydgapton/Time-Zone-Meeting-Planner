@@ -47,7 +47,12 @@ function TimeGrid({ cities, slots, hours, overlapFlags }: TimeGridProps) {
         </li>
       </ul>
 
-      <div className="grid-scroll">
+      <div
+        className="grid-scroll"
+        tabIndex={0}
+        role="region"
+        aria-labelledby="grid-title"
+        >
         <table className="grid">
           <thead>
             <tr>
