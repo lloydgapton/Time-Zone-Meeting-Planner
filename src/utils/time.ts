@@ -38,3 +38,21 @@ export function findBestWindow(flags: boolean[]): MeetingWindow | null{
     }
     return best;
 }
+
+export function formatTime(date: Date, timeZone: string): string {
+    return new Intl.DateTimeFormat("en-US", {
+        timeZone,
+        hour: "2-digit",
+        minute: "2-digit",
+        hourCycle: "h23",
+    }).format(date);
+}
+
+export function formatDay(date: Date, timeZone: string): string{
+    return new Intl.DateTimeFormat("en-US", {
+        timeZone,
+        weekday: "short",
+         month: "short",
+        day: "numeric",
+    }).format(date);
+}
