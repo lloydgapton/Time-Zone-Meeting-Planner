@@ -7,4 +7,9 @@ export type City ={
 export type WorkingHours ={
     start : number;
     end: number;
-}    
+}
+
+export type MeetingWindow ={
+    start: number;
+    length: number;
+}
