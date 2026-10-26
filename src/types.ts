@@ -1,7 +1,7 @@
 export type City ={
     id:string;
     name: string;
-    timezone:string;
+    timeZone:string;
 }
 
 export type WorkingHours ={
