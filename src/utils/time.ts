@@ -56,3 +56,25 @@ export function formatDay(date: Date, timeZone: string): string{
         day: "numeric",
     }).format(date);
 }
+
+export const HOUR_MS = 60 * 60 * 1000;
+
+export function buildDaySlots(): Date[] {
+  const start = new Date();
+  start.setHours(0, 0, 0, 0);
+
+  const slots: Date[] = [];
+  for (let i = 0; i < 24; i++) {
+    slots.push(new Date(start.getTime() + i * HOUR_MS));
+  }
+  return slots;
+}
+
+export function formatHourMinute(date: Date, timeZone: string): string {
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  }).format(date);
+}
